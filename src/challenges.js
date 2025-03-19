@@ -101,7 +101,19 @@ console.log("Ejercicio 4");
 const original = ["cat", "dog", "fish", "bird", "cat", "fish"];
 const toRemove = ["cat", "dog"];
 
-function filterOut() {}
+
+function filterOut(original, toRemove) {
+  if (original.length == 0 ){return null;}
+  const notInFirstArray = [];
+  original.forEach(element => {
+    if (!toRemove.includes(element)){
+      notInFirstArray.push(element);
+    }
+  });
+  return notInFirstArray;
+}
+
+console.log(filterOut(original, toRemove));
 
 
 
@@ -129,7 +141,14 @@ const duplicateWords = [
   "bring",
 ];
 
-function uniquifyArray() {}
+
+function uniquifyArray(duplicateWords) {
+    if (duplicateWords.length ==0){return null;}
+    return [...new Set(duplicateWords)]; // Un set unicamente tiene elementos únicos. Con '...' lo devolvemos a ser un array.
+}
+
+console.log( uniquifyArray(duplicateWords));
+
 
 // Bonus: Iteration 6 | Product of Adjacent Numbers
 console.log("Ejercicio 6");
